@@ -143,6 +143,7 @@ body {
     z-index: 9;
     cursor: pointer;
     box-shadow: 0 0 10px black;
+    text-align: center;
 }
 .recording #listen-button {
     display: block;

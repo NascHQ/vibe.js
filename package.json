@@ -1,0 +1,24 @@
+{
+  "name": "vibe.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dsw.js",
+  "scripts": {
+    "start": "http-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NascHQ/vibe.js.git"
+  },
+  "keywords": [],
+  "author": "Felipe Nascimento Moura <felipenmoura@gmail.com> (http://felipenmoura.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NascHQ/vibe.js/issues"
+  },
+  "homepage": "https://github.com/NascHQ/vibe.js#readme",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

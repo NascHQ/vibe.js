@@ -97,13 +97,11 @@
     document.getElementById('listen-button').addEventListener('mousedown', down);
     document.getElementById('listen-button').addEventListener('mouseup', up);
     _b.addEventListener('keydown', function(event){
-        console.log(event.keyCode);
         if (event.keyCode == 32 && !enabled) {
             down();
         }
     });
     _b.addEventListener('keyup', function(event){
-        console.log(event.keyCode);
         if (event.keyCode == 32 && !enabled) {
             up();
         }
