@@ -37,7 +37,7 @@
         clearTimeout(timeout);
     });
     document.getElementById('vib-button').addEventListener('click', function () {
-        window.navigator.vibrate(finalVib || [
+        window.navigator.vibrate(finalVib.length? finalVib : [
             500, 200, 500, 200, 500,
             200, 100, 200, 100, 200, 500,
             200, 100, 200, 100, 200, 500
