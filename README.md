@@ -5,4 +5,4 @@ Then, click _play_ to listen/see the result, or the _clear_ button.
 
 You can then copy and paste the resulting code.
 
-Visit the [vibe.js tool](https://vibejs-gfpsnaaemk.now.sh).
+Visit the [vibe.js tool](https://vibejs-hybfktmevr.now.sh).
