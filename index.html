@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="styles/default.css" type="text/css">
+        
+        <!-- WEB APP META DATA -->
+        <link rel="manifest" href="/webapp-manifest.json">
+        <meta name="theme-color" content="#DD5939"> <!-- set theme's color -->
+        <!-- /WEB APP META DATA -->
+        
+        <script src="dsw.js"></script>
+        <script>
+            DSW.setup()
+            .then(function(result){
+                // tell your users about the good news
+            })
+            .catch(function(reason){
+                // ops!
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="cellphone"></div>
+            <div class="vib-signals"></div>
+            <div class="content">
+                <input type="button" id="listen-button" value="Vib">
+                <input type="button" id="clear-button" value="Clear">
+                <br/>
+                
+                <div class="result-container">
+                    navigator.vibrate(<span type="text" id="created-result"></span>);
+                </div>
+                <br/>
+                <input type="button" id="vib-button" value="Test">
+            </div>
+        </div>
+        <script src="scripts/default.js"></script>        
+    </body>
+</html>

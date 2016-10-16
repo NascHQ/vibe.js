@@ -1,0 +1,97 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 3px;
+}
+
+body {
+    background-image: url(/images/table.jpg);
+    background-size: cover;
+}
+
+.cellphone {
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    height: 100%;
+    z-index: 1;
+    background-image: url(/images/cellphone.png);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.content {
+    position: relative;
+    z-index: 2;
+    width: 240px;
+    margin: auto;
+    margin-top: 104px;
+}
+
+#created-result {
+    width: 100%;
+    height: 80px;
+}
+
+.result-container {
+    font-family: monospace;
+}
+
+.vib-signals {
+    position: absolute;
+    left: 50%;
+    top: 160px;
+    width: 0;
+    height: 100%;
+    opacity: 0;
+    transition: opacity .01s linear;
+}
+
+.vib-signals:before {
+    content: "";
+    position: absolute;
+    left: -280px;
+    background-image: url(/images/vib.png);
+    width: 130px;
+    height: 180px;
+}
+.vib-signals:after {
+    content: "";
+    position: absolute;
+    left: 150px;
+    background-image: url(/images/vib.png);
+    width: 130px;
+    height: 180px;
+    transform: scale(-1, 1);
+}
+
+.vibrating .container {
+    /*outline: solid 3px red;*/
+    animation-name: vibrateIt;
+    animation-duration: 0.05s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.vibrating .vib-signals {
+    opacity: 1;
+}
+
+@keyframes vibrateIt {
+    from {
+        transform: scale(1, 1) rotateZ(-.5deg);
+    }
+    to {
+        transform: scale(1.01, 1.01) rotateZ(.5deg);
+    }
+}
