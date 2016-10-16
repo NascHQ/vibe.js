@@ -74,13 +74,40 @@
         start = d.getTime();
     }
     
+    function selectText(container) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(container);
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(container);
+            window.getSelection().addRange(range);
+        }
+    }
+    
     document.getElementById('start-recording-btn').addEventListener('click', function () {
         enabled = !enabled;
         _b.classList.toggle('recording');
     });
     
+    result.parentElement.addEventListener('click', function (event) {
+        selectText(this);
+    });
     document.getElementById('listen-button').addEventListener('mousedown', down);
     document.getElementById('listen-button').addEventListener('mouseup', up);
+    _b.addEventListener('keydown', function(event){
+        console.log(event.keyCode);
+        if (event.keyCode == 32 && !enabled) {
+            down();
+        }
+    });
+    _b.addEventListener('keyup', function(event){
+        console.log(event.keyCode);
+        if (event.keyCode == 32 && !enabled) {
+            up();
+        }
+    });
 })();
 
 
