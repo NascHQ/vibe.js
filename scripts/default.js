@@ -4,6 +4,8 @@
     var _b = document.body || false;
     var enabled = true;
     
+    var audio = new Audio('/audios/vibrate-sound.mp3');
+    
     navigator.vibrate = function(){
         
         var timer = 0;
@@ -19,8 +21,11 @@
             if(!_b) return;
             if(curToggleStatus && !force){
                 _b.classList.add('vibrating');
+                audio.currentTime = 0;
+                audio.play();
             }else{
                 _b.classList.remove('vibrating');
+                audio.pause();
             }
             curToggleStatus = !curToggleStatus;
         }
@@ -32,6 +37,7 @@
         setTimeout(function(){
             toggle(true);
             enabled = true;
+            audio.pause();
         }, ++timer);
         return originalVibrate.apply(navigator, arguments);
     };
@@ -96,13 +102,17 @@
     });
     document.getElementById('listen-button').addEventListener('mousedown', down);
     document.getElementById('listen-button').addEventListener('mouseup', up);
+    var kd = false;
     _b.addEventListener('keydown', function(event){
-        if (event.keyCode == 32 && !enabled) {
+        if (event.keyCode == 32 && !enabled && !kd) {
+            kd = true;
+            console.log('kd');
             down();
         }
     });
     _b.addEventListener('keyup', function(event){
         if (event.keyCode == 32 && !enabled) {
+            kd = false;
             up();
         }
     });
