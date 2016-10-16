@@ -167,3 +167,14 @@ body {
         transform: scale(1.01, 1.01) rotateZ(.5deg);
     }
 }
+
+#logo-nasc {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 140px;
+}
+
+#logo-nasc img {
+    width: 100%;
+}
