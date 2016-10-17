@@ -178,3 +178,9 @@ body {
 #logo-nasc img {
     width: 100%;
 }
+
+@media (max-width: 400px) {
+  .cellphone {
+    background: none;
+  }
+}

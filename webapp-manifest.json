@@ -1,35 +1,34 @@
 {
-    "name": "Your Web App Name",
-    "short_name": "appName",
-    "description": "Main description of your web app.",
+    "name": "Vibe.JS",
+    "short_name": "vibe.js",
+    "description": "Create and test vibrate patterns to use with JavaScript's vibrate API, in a visual way.",
     "icons": [
         {
-            "src": "images/icon-128.png",
+            "src": "/images/icon-128.png",
             "sizes": "128x128",
             "type": "image/png"
         },
         {
-            "src": "images/icon-152.png",
-            "sizes": "152x152",
-            "type": "image/png"
-        },
-        {
-            "src": "images/icon-144.png",
+            "src": "/images/icon-144.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "images/icon-192.png",
+            "src": "/images/icon-152.png",
+            "sizes": "152x152",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/icon-192.png",
             "sizes": "192x192",
             "type": "image/png"
         }
     ],
-    "start_url": "/index.html?homescreen=1",
+    "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#47b74f",
-    "theme_color": "#438948",
-
-    "gcm_sender_id": "your-gcm-sender-id",
+    "background_color": "#ffffff",
+    "orientation": "portrait",
+    "theme_color": "#ff656f",
 
     "developer": {
         "name": "Felipe N. Moura",
@@ -43,16 +42,16 @@
     },
     "locales": {
         "pt": {
-            "name": "BrazilJS",
-            "description": "Sua descrição."
+            "name": "VibeJS",
+            "description": "Crie e teste padrões de vibração para usar com a API vibrate do JavaScript, de forma visual."
         },
-        "pt": {
-            "name": "WebApp",
-            "description": "Su descripción."
+        "es": {
+            "name": "VibeJS",
+            "description": ""
         },
         "en": {
-            "name": "WebApp",
-            "description": "Your descriptions."
+            "name": "VibeJS",
+            "description": "Crea y prueba patrones de vibración para utilizar con la API de vibración de JavaScript, de una manera visual."
         }
     }
 }
