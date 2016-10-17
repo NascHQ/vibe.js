@@ -989,7 +989,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var isInSWScope = false;
 var isInTest = typeof global.it === 'function';
 
-var DSW = { version: '1.10.6', build: '1476742290746' };
+var DSW = { version: '1.10.6', build: '1476742912641' };
 var REQUEST_TIME_LIMIT = 5000;
 var REGISTRATION_TIMEOUT = 12000;
 var DEFAULT_NOTIF_DURATION = 6000;
@@ -1074,6 +1074,8 @@ if (isInSWScope) {
                 _utils2.default.setup(DSWManager, PWASettings);
                 _cacheManager2.default.setup(DSWManager, PWASettings, _goFetch2.default);
                 _strategies2.default.setup(DSWManager, _cacheManager2.default, _goFetch2.default);
+
+                var ROOT_SW_SCOPE = new URL(location.href).pathname.replace(/\/[^\/]+$/, '/');
 
                 return new Promise(function (resolve, reject) {
                     // we will prepare and store the rules here, so it becomes
@@ -1185,7 +1187,8 @@ if (isInSWScope) {
                         'apply': { cache: {} }
                     }, rootMatchingRX);
 
-                    preCache.unshift('/');
+                    // TODO: AQUI
+                    preCache.unshift(ROOT_SW_SCOPE);
 
                     // if we've got urls to pre-store, let's cache them!
                     // also, if there is any database to be created, this is the time
