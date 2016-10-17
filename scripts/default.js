@@ -4,7 +4,7 @@
     var _b = document.body || false;
     var enabled = true;
     
-    var audio = new Audio('/audios/vibrate-sound.mp3');
+    var audio = new Audio('/vibe.js/audios/vibrate-sound.mp3');
     
     navigator.vibrate = function(){
         

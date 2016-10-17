@@ -247,7 +247,7 @@ var cacheManager = {
                                 } else {
                                     clonedResponse = response.clone();
                                     DSWManager.traceStep(request, 'Added to cache', { cacheData: cacheData });
-                                    cache.put(request, clonedResponse);
+                                    clonedResponse & request & cache.put(request, clonedResponse);
                                 }
                             })();
                         }
@@ -989,7 +989,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var isInSWScope = false;
 var isInTest = typeof global.it === 'function';
 
-var DSW = { version: '1.10.6' };
+var DSW = { version: '1.10.6', build: '1476742290746' };
 var REQUEST_TIME_LIMIT = 5000;
 var REGISTRATION_TIMEOUT = 12000;
 var DEFAULT_NOTIF_DURATION = 6000;
@@ -1198,9 +1198,9 @@ if (isInSWScope) {
                         }))).then(function (_) {
                             resolve();
                         }).catch(function (err) {
-                            _logger2.default.error('Failed storing the appShell! Could not register the service worker.', err.url || err.message, err);
-                            //throw new Error('Aborting service worker installation');
-                            reject();
+                            var errMessage = 'Failed storing the appShell! Could not register the service worker.' + '\nCould not find ' + (err.url || err.message) + '\n';
+                            _logger2.default.error(errMessage, err);
+                            reject(errMessage);
                         });
                     } else {
                         resolve();
@@ -1559,11 +1559,11 @@ if (isInSWScope) {
     (function () {
 
         DSW.status = {
+            version: PWASettings.version || PWASettings.dswVersion,
             registered: false,
             sync: false,
             appShell: false,
-            notification: false,
-            version: PWASettings.dswVersion
+            notification: false
         };
 
         var pendingResolve = void 0,
@@ -1817,7 +1817,7 @@ if (isInSWScope) {
                             DSW.status.registered = true;
 
                             navigator.serviceWorker.ready.then(function (reg) {
-                                _logger2.default.info('Registered service worker');
+
                                 DSW.status.ready = true;
                                 eventManager.trigger('registered', DSW.status);
 
@@ -1847,6 +1847,7 @@ if (isInSWScope) {
                                 })]).then(function (_) {
                                     localStorage.setItem('DSW-STATUS', JSON.stringify(DSW.status));
                                     eventManager.trigger('enabled', DSW.status);
+                                    _logger2.default.info('Service Worker was registered', DSW.status);
                                     resolve(DSW.status);
                                 });
                             });
@@ -1875,7 +1876,7 @@ if (isInSWScope) {
                         DSW.status = JSON.parse(localStorage.getItem('DSW-STATUS'));
                     }
                 } else {
-                    DSW.status.appShell = 'Service worker not supported';
+                    DSW.status.fail = 'Service worker not supported';
                 }
             });
         };
