@@ -2,7 +2,12 @@
     "dswVersion": 1.0,
     "applyImmediately": true,
     "appShell": [
-        "/index.html?homescreen=1"
+        "/index.html?homescreen=1",
+        "/images/table.jpg",
+        "/images/vib.png",
+        "/images/nasc-logo.png",
+        "/images/cellphone.png",
+        "/audios/vibrate-sound.mp3"
     ],
     "enforceSSL": false,
     "keepUnusedCaches": false,

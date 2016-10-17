@@ -106,7 +106,6 @@
     _b.addEventListener('keydown', function(event){
         if (event.keyCode == 32 && !enabled && !kd) {
             kd = true;
-            console.log('kd');
             down();
         }
     });
