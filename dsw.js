@@ -2,12 +2,12 @@ const PWASettings = {
     "dswVersion": 1.0,
     "applyImmediately": true,
     "appShell": [
-        "/index.html?homescreen=1",
-        "/images/table.jpg",
-        "/images/vib.png",
-        "/images/nasc-logo.png",
-        "/images/cellphone.png",
-        "/audios/vibrate-sound.mp3"
+        "/vibe.js/index.html?homescreen=1",
+        "/vibe.js/images/table.jpg",
+        "/vibe.js/images/vib.png",
+        "/vibe.js/images/nasc-logo.png",
+        "/vibe.js/images/cellphone.png",
+        "/vibe.js/audios/vibrate-sound.mp3"
     ],
     "enforceSSL": false,
     "keepUnusedCaches": false,
@@ -50,7 +50,7 @@ const PWASettings = {
                 "status": [404]
             },
             "apply": {
-                "fetch": "/not-found.html"
+                "fetch": "/vibe.js/not-found.html"
             }
         },
         "imageNotFound": {
@@ -59,7 +59,7 @@ const PWASettings = {
                 "extension": ["jpg", "gif", "png", "jpeg", "webp"]
             },
             "apply": {
-                "fetch": "/404.jpg"
+                "fetch": "/vibe.js/404.jpg"
             }
         }
     }
