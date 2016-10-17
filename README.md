@@ -1,3 +1,5 @@
+![Logo Vibe.js](https://github.com/NascHQ/vibe.js/blob/master/images/icon-192.png?raw=true)
+
 Use this to create vibration patterns to use in your pages with the vibrate API.
 
 Click the _record_ button, then use `space key` or `mouse click` to create the pattern.  
