@@ -7,4 +7,5 @@ Then, click _play_ to listen/see the result, or the _clear_ button.
 
 You can then copy and paste the resulting code.
 
-Visit the [vibe.js tool](https://naschq.github.io/vibe.js/).
+Visit the [vibe.js tool](https://naschq.github.io/vibe.js/).  
+![Vibe.js Cover/print](https://github.com/NascHQ/vibe.js/blob/master/images/vibe-js-cover.png?raw=true)
