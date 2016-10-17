@@ -180,7 +180,21 @@ body {
 }
 
 @media (max-width: 400px) {
-  .cellphone {
-    background: none;
-  }
+    .cellphone {
+        background: none;
+    }
+    body {
+        background-image: url(../images/icon-128.png);
+        overflow: hidden;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+    .content {
+        margin-top: 0;
+    }
+    #logo-nasc {
+        right: auto;
+        left: 5px;
+    }
 }
