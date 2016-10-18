@@ -204,4 +204,8 @@ body {
     .result-container {
         padding-left: 5px;
     }
+    
+    #listen-button {
+        width: 100%;
+    }
 }

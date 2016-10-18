@@ -101,7 +101,9 @@
         selectText(this);
     });
     document.getElementById('listen-button').addEventListener('mousedown', down);
+    document.getElementById('listen-button').addEventListener('touchstart', down);
     document.getElementById('listen-button').addEventListener('mouseup', up);
+    document.getElementById('listen-button').addEventListener('touchend', up);
     var kd = false;
     _b.addEventListener('keydown', function(event){
         if (event.keyCode == 32 && !enabled && !kd) {
