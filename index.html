@@ -54,21 +54,21 @@
             <div class="vib-signals"></div>
             <div class="content">
                 <div class="buttons-container">
-                    <div class="btn" id="start-recording-btn" onselectstart="return false" tabindex="1"></div>
-                    <div class="btn" id="clear-button" onselectstart="return false" tabindex="2">clear</div>
-                    <div class="btn" id="vib-button" onselectstart="return false" tabindex="3">►</div>
+                    <div class="btn" role="button" id="start-recording-btn" onselectstart="return false" tabindex="1" title="Start recording a vibration pattern"></div>
+                    <div class="btn" role="button" id="clear-button" onselectstart="return false" tabindex="2" title="Clear the pattern">clear</div>
+                    <div class="btn" role="button" id="vib-button" onselectstart="return false" tabindex="3" title="Play and test the vibration pattern">►</div>
                 </div>
-                <div type="button" id="listen-button" onselectstart="return false">
+                <div type="button" id="listen-button" onselectstart="return false" tabindex="5">
                     Click here to record a vibrating pattern <br/>(or hit space)
                 </div>
-                <div class="result-container">
+                <div class="result-container" tabindex="4">
                     navigator.vibrate([<span type="text" id="created-result"></span><br/>]);
                 </div>
             </div>
         </div>
         
         <a id="logo-nasc" href="https://github.com/NascHQ/vibe.js" target="_blank">
-            <img src="images/nasc-logo.png" alt="Nasc logo"/>
+            <svg aria-hidden="true" class="octicon octicon-mark-github" height="34" version="1.1" viewBox="0 0 16 16" width="34"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg> <img src="images/nasc-logo.png" alt="Nasc logo"/>
         </a>
         
         <script src="scripts/default.js"></script>        

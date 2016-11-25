@@ -149,6 +149,11 @@ body {
     display: block;
 }
 
+[tabindex]:focus {
+  outline: none;
+  box-shadow: 0 0 10px 3px #fff;
+}
+
 .recording #vib-button,
 .recording #clear-button {
     color: #999;
@@ -173,6 +178,12 @@ body {
     bottom: 5px;
     right: 5px;
     width: 140px;
+}
+
+#logo-nasc svg {
+  position: absolute;
+  left: -40px;
+  fill: #d8d5d5;
 }
 
 #logo-nasc img {

@@ -46,20 +46,25 @@
     var result = document.getElementById('created-result');
     var finalVib = [];
     
-    document.getElementById('clear-button').addEventListener('click', function () {
+    function clearPattern () {
         result.innerHTML = '';
         finalVib = [];
         start = 0;
         clearTimeout(timeout);
         _b.classList.remove('recording');
-    });
-    document.getElementById('vib-button').addEventListener('click', function () {
+    }
+    document.getElementById('clear-button').addEventListener('click', clearPattern);
+    document.getElementById('clear-button').addEventListener('keypress', clearPattern);
+    
+    function vibratePattern () {
         window.navigator.vibrate(finalVib.length? finalVib : [
             500, 200, 500, 200, 500,
             200, 100, 200, 100, 200, 500,
             200, 100, 200, 100, 200, 500
         ]);
-    });
+    }
+    document.getElementById('vib-button').addEventListener('click', vibratePattern);
+    document.getElementById('vib-button').addEventListener('keypress', vibratePattern);
     
     function down () {
         var d = new Date();
@@ -92,9 +97,22 @@
         }
     }
     
-    document.getElementById('start-recording-btn').addEventListener('click', function () {
+    function startRecording (event) {
+        if (enabled) {
+          document.getElementById('start-recording-btn').blur();
+        } else {
+          document.getElementById('vib-button').focus();
+        }
         enabled = !enabled;
         _b.classList.toggle('recording');
+    }
+    document.getElementById('start-recording-btn').addEventListener('click', startRecording);
+    document.getElementById('start-recording-btn').addEventListener('keyup', function (event) {
+        if (event.keyCode == 32 || event.keyCode == 13) {
+            startRecording(event);
+            event.cancelBubble = true;
+            event.stopPropagation();
+        }
     });
     
     result.parentElement.addEventListener('click', function (event) {
@@ -107,8 +125,10 @@
     var kd = false;
     _b.addEventListener('keydown', function(event){
         if (event.keyCode == 32 && !enabled && !kd) {
-            kd = true;
-            down();
+          kd = true;
+          down();
+        } else if (event.keyCode == 27 && !enabled) {
+          startRecording();
         }
     });
     _b.addEventListener('keyup', function(event){
